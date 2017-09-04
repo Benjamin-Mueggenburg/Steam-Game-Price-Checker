@@ -1,0 +1,3 @@
+*NOTE. THIS LINE WILL NOT BE READ BY THE SOFTWARE* For each line type in the appid of the app, ONE ID PER LINE. 
+47870
+24870
