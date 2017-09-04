@@ -3,7 +3,7 @@ A python program which using the steam web API allows you to check the price of 
 
 # How to set it up
 To get this program running on your computer you need to:
-1. Download python (www.python.org.) 
+1. Download python 3.x (python 3 or above) (www.python.org) 
 2. Install dependies - go onto command prompt and type 'pip install requests'
 3. Download the python file, as well as the APPid.txt file.
 4. Put these files inside any folder, just as long as they are in the same directory
