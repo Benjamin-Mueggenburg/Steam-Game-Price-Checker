@@ -8,11 +8,19 @@ import requests
 #Import os, allows for program to pause at end
 import os
 #Version number variable (later to be printed)
-version = "2.0"
+version = "3.0"
 #Author name variable (also later to be printed)
 author = "Benjamin Mueggenburg"
 #Number which with each game will increase by one, saying "Game 1", "Game 2", etc.
 number = 1
+
+#System automatically ajusts currency to location. If you want to manually type it in (if you're using TOR or a VPN) then set
+#AutomaticCurreny to 'false'
+automaticCurrency = True
+#Change for currency (The New Zealand dollar is nzd, and United States dollar is us). 
+#This does not matter if 'automaticCurrency' is set to true
+desiredcurrency = "nzd"
+
 
 #Prints the starting dialogue with the name of the program, the author, version. (\n means new line)
 print("STEAM GAME CHECKER\nversion: {}\nAuthor: {}\n================================\n================================".format(version, author))
@@ -90,16 +98,18 @@ with open('{}.txt'.format(Filename)) as f:
 
 appId = file[1:]
 
-#["237110", "220200", "274190", "314160","578330","391540"]
-#Change for currency (The New Zealand dollar is nzd)
-desiredcurrency = "nzd"
-
-
-
 #This loop runs for how many strings are in the list called appId
 for ID in appId:
-	#Creates a temporary url for the game, by inserting the appid into the url below
-	tempUrl = "http://store.steampowered.com/api/appdetails/?appids={}&cc={}".format(ID,desiredcurrency)
+	#Checks to see if automatic currency is true or false
+	#If it is then the desired currency does not matter
+	if automaticCurrency = True:
+		#Creates a temporary url for the game, by inserting the appid into the url below
+		tempUrl = "http://store.steampowered.com/api/appdetails/?appids={}".format(ID)
+	#If the else runs then automatic currency is false 
+	else:
+		#Creates a temporary url for the game, by inserting the appid into the url below
+		tempUrl = "http://store.steampowered.com/api/appdetails/?appids={}&cc={}".format(ID,desiredcurrency)
+	
 	#Calls the PrintInfo function on the tempUrl, appid and the local game number (1,2,3 etc.)
 	PrintInfo(tempUrl,ID,number)
 	#Add's one to number e.g 1 becomes 2, 3 become 4 etc.
