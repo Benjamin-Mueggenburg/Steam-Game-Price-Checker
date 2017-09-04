@@ -1,1 +1,0 @@
-http://store.steampowered.com/api/appdetails/?appids=237110&cc=nzd
